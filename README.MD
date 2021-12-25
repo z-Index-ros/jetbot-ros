@@ -1,6 +1,7 @@
-# Jetbot running with ROS
+# Jetbot running with ROS2
 
 ## Prerequisites
+
 
 ``` bash
 #pip3 install adafruit-circuitpython-lis3dh

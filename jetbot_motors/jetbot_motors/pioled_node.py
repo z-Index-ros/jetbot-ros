@@ -14,6 +14,7 @@ class PiOLedSubscriber(Node):
         super().__init__(node_name = 'pioled_subscriber')
         self.subscription = self.create_subscription(String, 'hello_topic', self.listener_callback, 10)
         self.subscription
+        
 
         # Create the I2C interface.
         i2c = busio.I2C(SCL, SDA)
@@ -65,17 +66,29 @@ class PiOLedSubscriber(Node):
         self.disp.image(image)
         self.disp.show()
 
-        print("pioled text updated")
+        self.get_logger().info("pioled text updated")
+
+    def __del__(self):
+        self.get_logger().info("destroy method called, clearing display")
+        # Clear display.
+        self.disp.fill(0)
+        self.disp.show()
+
+
+
 
 def main(args=None):
     rclpy.init(args=args)
 
     subscriber = PiOLedSubscriber()
 
-    rclpy.spin(subscriber)
-
-    subscriber.destroy_node()
-    rclpy.shutdown()
+    try:
+        rclpy.spin(subscriber)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        rclpy.try_shutdown()
+        subscriber.destroy_node()
 
 if __name__ == '__main__':
     main()
