@@ -12,7 +12,7 @@ class PiOLedSubscriber(Node):
 
     def __init__(self):
         super().__init__(node_name = 'pioled_subscriber')
-        self.subscription = self.create_subscription(String, 'topic', self.listener_callback, 10)
+        self.subscription = self.create_subscription(String, 'hello_topic', self.listener_callback, 10)
         self.subscription
 
         # Create the I2C interface.
@@ -31,36 +31,38 @@ class PiOLedSubscriber(Node):
         # Make sure to create image with mode '1' for 1-bit color.
         self.width = self.disp.width
         self.height = self.disp.height
-        image = Image.new("1", (self.width, self.height))
-
-        # Get drawing object to draw on image.
-        self.draw = ImageDraw.Draw(image)
-
-        # Draw a black filled box to clear the image.
-        self.draw.rectangle((0, 0, self.width, self.height), outline=0, fill=0)
 
         # Load default font.
         self.font = ImageFont.load_default()
 
-    def get_wrapped_text(text: str, font: ImageFont.ImageFont,
-                        line_length: int):
-            lines = ['']
-            for word in text.split():
-                line = f'{lines[-1]} {word}'.strip()
-                if font.getsize(line)[0] <= line_length:
-                    lines[-1] = line
-                else:
-                    lines.append(word)
-            return '\n'.join(lines)
+    def get_wrapped_text(self, text: str):#, font: ImageFont.ImageFont, line_length: int):
+        lines = ['']
+        for word in text.split():
+            line = f'{lines[-1]} {word}'.strip()
+            if self.font.getsize(line)[0] <= self.width:#line_length:
+                lines[-1] = line
+            else:
+                lines.append(word)
+        return '\n'.join(lines)
 
     def listener_callback(self, msg):
         self.get_logger().info(msg.data)
+        text = msg.data
+        
+        image = Image.new("1", (self.width, self.height))
+
+        # Get drawing object to draw on image.
+        draw = ImageDraw.Draw(image)
+
+        # Draw a black filled box to clear the image.
+        draw.rectangle((0, 0, self.width, self.height), outline=0, fill=0)
+
 
         # draw the text
-        self.draw.multiline_text((0,0), self.get_wrapped_text(msg.data, self.font, self.width), font=self.font, fill=255)
+        draw.multiline_text((0,0), self.get_wrapped_text(text), font=self.font, fill=255)
 
         # Display image.
-        self.disp.image(self.image)
+        self.disp.image(image)
         self.disp.show()
 
         print("pioled text updated")
