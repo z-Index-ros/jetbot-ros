@@ -4,7 +4,7 @@
 import time
 
 # Import the Robot.py file (must be in the same directory as this file!).
-import Robot
+import jetbot_motors.jetbot_motors._Robot as _Robot
 
 
 # Set the trim offset for each motor (left and right).  This is a value that
@@ -27,7 +27,7 @@ RIGHT_TRIM  = 0
 #  - addr: The I2C address of the motor HAT, default is 0x60.
 #  - left_id: The ID of the left motor, default is 1.
 #  - right_id: The ID of the right motor, default is 2.
-robot = Robot.Robot(left_trim=LEFT_TRIM, right_trim=RIGHT_TRIM, addr=0x60)
+robot = _Robot.Robot(left_trim=LEFT_TRIM, right_trim=RIGHT_TRIM, addr=0x60)
 
 # Now move the robot around!
 # Each call below takes two parameters:
