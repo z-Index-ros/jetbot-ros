@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'pioled = jetbot_motors.pioled_node:main'
+            'pioled = jetbot_motors.pioled_node:main',
+            'pioled_stats = jetbot_motors.pioled_stats:main'
         ],
     },
 )
