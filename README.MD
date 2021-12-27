@@ -42,4 +42,4 @@ Perform some quick verifications to be sure that the ROS2 is up-n-running, like 
 
 ## Building the JetBot on ROS2 Setp-by-step
 
-* [Turn on the PiOLED](doc/PiOLED.md)
+* [Turn on the PiOLED](./doc/PiOLED.md)
