@@ -15,11 +15,18 @@ So if you're like me, welcome to this project.
 
 ## Prerequisites
 
+### Hardware prerequisite
+
+Your Jetbot is mounted and operational: [JetBot Hardware Setup](https://jetbot.org/master/hardware_setup.html). 
+
+> That should be the case otherwise you'd not be ready these lines.
+
+### Software prerequisites
 Firstly we want to run the Jetson on a quite recent release of Ubuntu and ROS2.
 
->The target : Ubuntu 20.04 and ROS Galaxy 
+>The target : Ubuntu 20.04 and ROS2 Galaxy 
 
-### Ubuntu 20.04
+#### Installing Ubuntu 20.04
 
 Installing Ubuntu 20.04 on a Jetson Nano is quite straightforward is you follow the excellent article [Install Ubuntu 20.04 on Jetson Nano](https://qengineering.eu/install-ubuntu-20.04-on-jetson-nano.html) from Q-engineering team.
 
@@ -27,38 +34,12 @@ Installing Ubuntu 20.04 on a Jetson Nano is quite straightforward is you follow 
 >
 > Yes, I told that I prefer to do it by myself, ... and that's what I did, but prepare to be patient, a wise man is worth two!
 
-### ROS2
+#### Installing ROS2
 
+Follow the [Guide](https://docs.ros.org/en/galactic/Installation/Ubuntu-Install-Binary.html).
 
+Perform some quick verifications to be sure that the ROS2 is up-n-running, like running the tutorials.
 
-``` bash
-#pip3 install adafruit-circuitpython-lis3dh
-#pip3 install adafruit-circuitpython-motorkit
+## Building the JetBot on ROS2 Setp-by-step
 
-# AdaFruit Blinka, the lib to use AdaFruit CircuitPython on a Jetson nano
-pip3 install adafruit-blinka
-
-# feather
-sudo pip3 install adafruit-circuitpython-servokit
-
-# PiOLED
-sudo pip3 install adafruit-circuitpython-ssd1306
-```
-
-https://github.com/adafruit/Adafruit-Motor-HAT-Python-Library
-
-## Adafruit DC & Stepper Motor HAT
-https://fr.pinout.xyz/pinout/adafruit_dc_stepper_motor_hat#
-
-``` bash
-    git clone https://github.com/adafruit/Adafruit-Motor-HAT-Python-Library.git
-    cd Adafruit-Motor-HAT-Python-Library
-    sudo apt-get install python-dev
-    sudo python setup.py install
-```
-
-## Adafruit Python GPIO Library
-https://github.com/adafruit/Adafruit_Python_GPIO
-
-## AdaFruit PiOLED
-https://learn.adafruit.com/adafruit-pioled-128x32-mini-oled-for-raspberry-pi/usage
+* [Turn on the PiOLED](doc/PiOLED.md)
