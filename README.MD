@@ -1,3 +1,5 @@
+![](https://jetbot.org/master/images/jetbot_800x630.png)
+
 # Jetbot running with ROS2
 
 The [JetBot](https://jetbot.org/) has been developped based on a Jetson Nano by the NVidia guys. The project has been build on the Jetpack 4.5 and proposes the JetBot SD image, all-in-one.
