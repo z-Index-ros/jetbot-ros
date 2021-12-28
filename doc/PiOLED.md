@@ -60,4 +60,5 @@ ros2 run jetbot_motors pioled
 
 ### The pioled node output an dthe pioled display
 ![The pioled node](pioled_node.png)
+![The pioled ](pioled.jpg)
 
