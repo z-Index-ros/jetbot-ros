@@ -42,6 +42,22 @@ Follow the [Guide](https://docs.ros.org/en/galactic/Installation/Ubuntu-Install-
 
 Perform some quick verifications to be sure that the ROS2 is up-n-running, like running the tutorials.
 
+#### Prepare the project locally
+
+From a terminal window
+``` bash
+# Source the ROS2 instalation as underlay
+source ~/ros2_galactic/ros2-linux/setup.bash
+
+# Create the workpace and the `src` subfolder
+mkdir -p ~/jetbot_ws/src
+cd ~/jetbot_ws/src/
+
+# clone the code
+git clone https://github.com/z-Index-ros/jetbot-ros.git
+
+```
+
 ## Building the JetBot on ROS2 Setp-by-step
 
 * [Turn on the PiOLED](./doc/PiOLED.md)
