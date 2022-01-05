@@ -7,7 +7,7 @@ class MotorsSubscriber(Node):
 
     def __init__(self):
         super().__init__(node_name = 'motor_subscriber')
-        self.subscription = self.create_subscription(String, 'cmd_vel', self.listener_callback, 10)
+        self.subscription = self.create_subscription(String, 'key_vel', self.listener_callback, 10)
         self.subscription
 
         self.robot = Robot()
@@ -15,10 +15,10 @@ class MotorsSubscriber(Node):
     def listener_callback(self, msg):
         self.get_logger().info(msg.data)
         action = msg.data
-        if (msg.data == "forward"): self.robot.forward(1)
-        elif (msg.data == "backward"): self.robot.backward(1)
-        elif (msg.data == "left"): self.robot.left(1)
-        elif (msg.data == "right"): self.robot.right(1)
+        if (msg.data == "r"): self.robot.forward(1)
+        elif (msg.data == "v"): self.robot.backward(1)
+        elif (msg.data == "d"): self.robot.left(1)
+        elif (msg.data == "g"): self.robot.right(1)
         else: self.robot.stop()
         
     def __del__(self):

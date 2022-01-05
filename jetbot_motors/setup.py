@@ -22,7 +22,8 @@ setup(
         'console_scripts': [
             'pioled = jetbot_motors.pioled_node:main',
             'pioled_stats = jetbot_motors.pioled_stats:main',
-            'motors = jetbot_motors.motors_node:main'
+            'motors = jetbot_motors.motors_node:main',
+            'motors_teleop = jetbot_motors.motors_teleop:main'
         ],
     },
 )
