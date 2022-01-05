@@ -4,7 +4,7 @@
 import time
 
 # Import the Robot.py file (must be in the same directory as this file!).
-import jetbot_motors.jetbot_motors._Robot as _Robot
+import Robot as Robot
 
 
 # Set the trim offset for each motor (left and right).  This is a value that
@@ -27,7 +27,7 @@ RIGHT_TRIM  = 0
 #  - addr: The I2C address of the motor HAT, default is 0x60.
 #  - left_id: The ID of the left motor, default is 1.
 #  - right_id: The ID of the right motor, default is 2.
-robot = _Robot.Robot(left_trim=LEFT_TRIM, right_trim=RIGHT_TRIM, addr=0x60)
+robot = Robot.Robot(left_trim=LEFT_TRIM, right_trim=RIGHT_TRIM, addr=0x60)
 
 # Now move the robot around!
 # Each call below takes two parameters:
@@ -38,28 +38,30 @@ robot = _Robot.Robot(left_trim=LEFT_TRIM, right_trim=RIGHT_TRIM, addr=0x60)
 #                     this amount of seconds the robot will stop.  This parameter
 #                     is optional and if not specified the robot will start moving
 #                     forever.
-robot.forward(150, 1.0)   # Move forward at speed 150 for 1 second.
-robot.left(200, 0.5)      # Spin left at speed 200 for 0.5 seconds.
-robot.forward(150, 1.0)   # Repeat the same movement 3 times below...
-robot.left(200, 0.5)
-robot.forward(150, 1.0)
-robot.left(200, 0.5)
-robot.forward(150, 1.0)
-robot.right(200, 0.5)
+
+robot.forward(1, 1.0)   # Move forward at speed 150 for 1 second.
+robot.left(1, 0.5)      # Spin left at speed 200 for 0.5 seconds.
+robot.forward(1, 1.0)   # Repeat the same movement 3 times below...
+robot.left(1, 0.5)
+robot.forward(1, 1.0)
+robot.left(1, 0.5)
+robot.forward(1, 1.0)
+robot.right(1, 0.5)
 
 # Spin in place slowly for a few seconds.
-robot.right(100)  # No time is specified so the robot will start spinning forever.
+robot.right(1)  # No time is specified so the robot will start spinning forever.
 time.sleep(2.0)   # Pause for a few seconds while the robot spins (you could do
                   # other processing here though!).
 robot.stop()      # Stop the robot from moving.
 
 # Now move backwards and spin right a few times.
-robot.backward(150, 1.0)
-robot.right(200, 0.5)
-robot.backward(150, 1.0)
-robot.right(200, 0.5)
-robot.backward(150, 1.0)
-robot.right(200, 0.5)
-robot.backward(150, 1.0)
+robot.backward(1, 1.0)
+robot.right(1, 0.5)
+robot.backward(1, 1.0)
+robot.right(1, 0.5)
+robot.backward(1, 1.0)
+robot.right(1, 0.5)
+robot.backward(1, 1.0)
 
-# That's it!  Note that on exit the robot will automatically stop moving.
+# That's it!  Note that  on exit the robot will automatically stop moving.
+#
