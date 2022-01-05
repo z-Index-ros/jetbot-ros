@@ -64,11 +64,11 @@ ros2 run jetbot_motors pioled
 
 ## Turn on the Jetson stats
 
-The Jetbot, in its original setup, shows on the stats (IP, CPU, RAM, Disk) on the PiOLED.
+The Jetbot, in its original setup, shows on the PiOLED the stats (IP, CPU, RAM, Disk).
 
-This is not magic, showing the stat is an example in the Adafruit learning center, read [Verify I2C Device](https://learn.adafruit.com/adafruit-pioled-128x32-mini-oled-for-raspberry-pi?view=all#verify-i2c-device-3024321-11) for details.
+This is not magic, showing the stat is an example from the Adafruit learning center, read [Verify I2C Device](https://learn.adafruit.com/adafruit-pioled-128x32-mini-oled-for-raspberry-pi?view=all#verify-i2c-device-3024321-11) for details.
 
-Turning the sample into a ROS2 Node is quite straigthforward, look at [pioled_stats.py](../jetbot_motors/jetbot_motors/pioled_stats.py).
+Turning the sample into a ROS2 Node is quite straightforward, look at [pioled_stats.py](../jetbot_motors/jetbot_motors/pioled_stats.py).
 
 Run the PiOLED Stats node
 
