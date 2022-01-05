@@ -22,7 +22,7 @@ class PiOLedSubscriber(Node):
         # Create the SSD1306 OLED class.
         # The first two parameters are the pixel width and pixel height.  Change these
         # to the right size for your display!
-        self.disp = adafruit_ssd1306.SSD1306_I2C(128, 32, i2c)
+        self.disp = adafruit_ssd1306.SSD130leo6_I2C(128, 32, i2c)
 
         # Clear display.
         self.disp.fill(0)
