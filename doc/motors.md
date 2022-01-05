@@ -56,3 +56,14 @@ python3 motors_hello.py
 
 > Additional info on the MotorKit API: [Adafruit MotorKit Library ](https://circuitpython.readthedocs.io/projects/motorkit/en/latest/api.html)
 
+
+# Welcome back Robot!
+
+Now it's time to re-build the JetBot's Robot class based on our new setup, see [Robot.py](../jetbot_motors/jetbot_motors/Robots.py) and the [test](../jetbot_motors/jetbot_motors/RobotTest.py).
+
+``` bash
+python3 RobotTest.py
+```  
+> We can know run the JetBot forward and backward, turn left and right, and of course ... stop.
+
+
