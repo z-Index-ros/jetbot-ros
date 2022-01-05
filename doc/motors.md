@@ -54,3 +54,5 @@ And now we can check that the motor is running. Run the [motors_hello.py](../jet
 python3 motors_hello.py
 ``` 
 
+> Additional info on the MotorKit API: [Adafruit MotorKit Library ](https://circuitpython.readthedocs.io/projects/motorkit/en/latest/api.html)
+
