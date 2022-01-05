@@ -58,6 +58,7 @@ git clone https://github.com/z-Index-ros/jetbot-ros.git
 
 ```
 
-## Building the JetBot on ROS2 Setp-by-step
+## Building the JetBot on ROS2 Step-by-step
 
 * [Turn on the PiOLED](./doc/PiOLED.md)
+* [Turn on the Motors](./doc/motors.md)

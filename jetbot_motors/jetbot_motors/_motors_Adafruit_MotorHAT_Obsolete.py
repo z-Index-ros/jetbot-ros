@@ -1,3 +1,6 @@
+# sudo pip3 uninstall Adafruit_MotorHAT
+
+
 #import rclpy
 import time
 import board

@@ -27,6 +27,15 @@ sudo pip3 install adafruit-circuitpython-ssd1306
 >
 > So it's a good idea refreshing the Jetbot project
 
+## Hello World!
+
+Run the [pioled_hello.py](../jetbot_motors/jetbot_motors/pioled_hello.py) to check everything is OK
+
+``` bash
+python3 pioled_hello.py
+``` 
+
+
 ## A first ROS Node
 
 The [pioled_node.py](../jetbot_motors/jetbot_motors/pioled_node.py) is a subscriber node that subscribes to a topic where string messages are published.
