@@ -29,7 +29,7 @@ sudo pip3 install adafruit-circuitpython-ssd1306
 
 ## Hello World!
 
-Run the [pioled_hello.py](../jetbot_motors/jetbot_motors/pioled_hello.py) to check everything is OK
+Run the [pioled_hello.py](../jetbot/jetbot/pioled_hello.py) to check everything is OK
 
 ``` bash
 python3 pioled_hello.py
@@ -38,7 +38,7 @@ python3 pioled_hello.py
 
 ## A first ROS Node
 
-The [pioled_node.py](../jetbot_motors/jetbot_motors/pioled_node.py) is a subscriber node that subscribes to a topic where string messages are published.
+The [pioled_node.py](../jetbot/jetbot/pioled_node.py) is a subscriber node that subscribes to a topic where string messages are published.
 
 You can use any publisher node like the one explained in the [ROS2 Tutorial](https://docs.ros.org/en/galactic/Tutorials/Writing-A-Simple-Py-Publisher-And-Subscriber.html) or in our [ROS2 Hello World Template](https://github.com/z-Index-ros/ros_template_hello)
 
@@ -77,7 +77,7 @@ The Jetbot, in its original setup, shows on the PiOLED the stats (IP, CPU, RAM, 
 
 This is not magic, showing the stat is an example from the Adafruit learning center, read [Verify I2C Device](https://learn.adafruit.com/adafruit-pioled-128x32-mini-oled-for-raspberry-pi?view=all#verify-i2c-device-3024321-11) for details.
 
-Turning the sample into a ROS2 Node is quite straightforward, look at [pioled_stats.py](../jetbot_motors/jetbot_motors/pioled_stats.py).
+Turning the sample into a ROS2 Node is quite straightforward, look at [pioled_stats.py](../jetbot/jetbot/pioled_stats.py).
 
 Run the PiOLED Stats node
 

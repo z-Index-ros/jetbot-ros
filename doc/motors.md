@@ -48,7 +48,7 @@ i2cdetect -r -y 1
 
 # Hello World!
 
-And now we can check that the motor is running. Run the [motors_hello.py](../jetbot_motors/jetbot_motors/motors_hello.py), the motor 1 (left one) should run during half a second.
+And now we can check that the motor is running. Run the [motors_hello.py](../jetbot/jetbot/motors_hello.py), the motor 1 (left one) should run during half a second.
 
 ``` bash
 python3 motors_hello.py
@@ -59,11 +59,71 @@ python3 motors_hello.py
 
 # Welcome back Robot!
 
-Now it's time to re-build the JetBot's Robot class based on our new setup, see [Robot.py](../jetbot_motors/jetbot_motors/Robots.py) and the [test](../jetbot_motors/jetbot_motors/RobotTest.py).
+Now it's time to re-build the JetBot's Robot class based on our new setup, see [Robot.py](../jetbot/jetbot/Robots.py) and the [test](../jetbot/jetbot/RobotTest.py).
 
 ``` bash
 python3 RobotTest.py
 ```  
 > We can know run the JetBot forward and backward, turn left and right, and of course ... stop.
+
+# Let's create a ROS2 node to pilot the motors
+
+## Motor node
+
+Using the [Robot class](../jetbot/jetbot/Robots.py) created ad tested at the previous step, let's make a node that's going to listnen to a topic for command like 'forward', 'stop', ...
+
+We'll later create / reuse a teleop node to pilto the motors using the keyboard.
+
+Let's assume we're using the following convention to pilot:
+
+| action | key |
+| --- | ---| 
+| forward | r |
+| turn left | d |
+| turn right | g |
+| backward | v |
+| stop | f (or any other key) |
+
+Look into the [MotorsSubscriber class](../jetbot/jetbot/motors_node.py) implementation. There's no rocket science here, it's a ROS2 subscriber node to the __key_vel__ topic with a callback that uses the Robot class instance according to the key pressed.
+
+## Teleop node
+
+And now we need a [teleop node](../jetbot/jetbot/motors_teleop.py) to pilot.
+
+The code is quite straightforward, we use the [readkeys](https://pypi.org/project/readkeys/) library to fetch keys pressed. 
+
+``` bash
+pip install readkeys
+```  
+
+
+It's a ROS2 publisher node with a timer that triggers regularly to fetch any key pressed and that publishes to the __key_vel__ topic the key that has been pressed
+
+## Build, install and run
+
+Open and terminal window and source ROS2
+
+``` bash
+# build form the root of the ROS2 workspace
+colcon build
+
+# install
+.  install/setup.bash 
+
+# and run the motors node
+ros2 run jetbot motors_node
+``` 
+
+Open another terminal window and source ROS2
+
+``` bash
+# and run the telop node
+ros2 run jetbot motors_teleop
+``` 
+
+Have fun :-)
+
+
+
 
 
