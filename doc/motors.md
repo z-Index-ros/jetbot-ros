@@ -70,9 +70,9 @@ python3 RobotTest.py
 
 ## Motor node
 
-Using the [Robot class](../jetbot/jetbot/Robots.py) created ad tested at the previous step, let's make a node that's going to listnen to a topic for command like 'forward', 'stop', ...
+Using the [Robot class](../jetbot/jetbot/Robots.py) created and tested at the previous step, let's make a node that's going to listen to a topic publishing commands like 'forward', 'stop', ...
 
-We'll later create / reuse a teleop node to pilto the motors using the keyboard.
+We'll later create / reuse a teleop node to pilot the motors using the keyboard.
 
 Let's assume we're using the following convention to pilot:
 
