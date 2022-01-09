@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'jetbot_motors'
+package_name = 'jetbot'
 
 setup(
     name=package_name,
@@ -20,10 +20,10 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'pioled = jetbot_motors.pioled_node:main',
-            'pioled_stats = jetbot_motors.pioled_stats:main',
-            'motors = jetbot_motors.motors_node:main',
-            'motors_teleop = jetbot_motors.motors_teleop:main'
+            'pioled = jetbot.pioled_node:main',
+            'pioled_stats = jetbot.pioled_stats:main',
+            'motors = jetbot.motors_node:main',
+            'motors_teleop = jetbot.motors_teleop:main'
         ],
     },
 )
