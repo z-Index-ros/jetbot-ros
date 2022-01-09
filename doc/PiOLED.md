@@ -62,7 +62,7 @@ colcon build
 . install/local_setup.bash
 
 # Start the publisher ROS Node and the Pioled
-ros2 run jetbot_motors pioled
+ros2 run jetbot pioled
 ``` 
 ### The publisher node output
 ![The publisher](publisher.png)
@@ -82,7 +82,7 @@ Turning the sample into a ROS2 Node is quite straightforward, look at [pioled_st
 Run the PiOLED Stats node
 
 ``` bash
-ros2 run jetbot_motors pioled_stats
+ros2 run jetbot pioled_stats
 ``` 
 
 The result should look like this
