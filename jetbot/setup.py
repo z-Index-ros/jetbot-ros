@@ -23,7 +23,9 @@ setup(
             'pioled = jetbot.pioled_node:main',
             'pioled_stats = jetbot.pioled_stats:main',
             'motors = jetbot.motors_node:main',
-            'motors_teleop = jetbot.motors_teleop:main'
+            'motors_teleop = jetbot.motors_teleop:main',
+            'camera = jetbot.opencv_publisher:main',
+            'image_viewer = jetbot.opencv_subscriber:main'
         ],
     },
 )
