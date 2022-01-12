@@ -2,7 +2,7 @@
 
 The OpenCV library is used to manage the camera and image streams.
 
-The first step - if you don't have already OpenCV installed - is ... installing it.
+The first step - if you don't have already OpenCV installed - is ... installing it on your Jetson.
 
 > There is an excellent tutorial provided by Q-engineering team [read more](https://qengineering.eu/install-opencv-4.5-on-jetson-nano.html), it is the same team we used for the Ubuntu installation described in the [home page](README.MD#installing-ubuntu-2004)
 
@@ -37,9 +37,8 @@ python test-cv2.py
 
 > Same output as with GStreamer
 
-> Sometime the service nvargus-daemon is stucked, her's how to restart
->
-> ``` sudo service nvargus-daemon restart ```
+> Sometime the service nvargus-daemon is stucked, here's how to restart
+>> ``` sudo service nvargus-daemon restart ```
 
 
 
