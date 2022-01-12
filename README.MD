@@ -62,3 +62,5 @@ git clone https://github.com/z-Index-ros/jetbot-ros.git
 
 * [Turn on the PiOLED](./doc/PiOLED.md)
 * [Turn on the Motors](./doc/motors.md)
+* [Turn on the Camera](./doc/camera.md)
+
