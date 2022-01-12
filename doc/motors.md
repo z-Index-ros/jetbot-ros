@@ -1,4 +1,4 @@
-# Turn the motors on
+# Turn on the motors
 
 The motors and the microcontroller from the bill of materials of the JetBos.org are [Adafruit DC Gearbox Motor - "TT Motor" - 200RPM - 3 to 6VDC](https://www.adafruit.com/product/3777) and an [Adafruit DC Motor + Stepper FeatherWing](https://www.adafruit.com/product/2927)
 
