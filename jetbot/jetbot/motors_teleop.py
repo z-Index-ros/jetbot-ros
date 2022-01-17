@@ -2,6 +2,7 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
 import readkeys
+import tensorflow
 
 class MotorsTeleop(Node):
 
