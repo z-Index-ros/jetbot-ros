@@ -60,5 +60,8 @@ git clone https://github.com/z-Index-ros/jetbot-ros.git
 
 ## Building the JetBot on ROS2 Step-by-step
 
-* [Turn on the PiOLED](./doc/PiOLED.md)
-* [Turn on the Motors](./doc/motors.md)
+* Re-create the basic building blocks
+    * [Turn on the PiOLED](./doc/PiOLED.md)
+    * [Turn on the Motors](./doc/motors.md)
+    * [Turn on the Camera](./doc/camera.md)
+
