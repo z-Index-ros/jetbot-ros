@@ -13,7 +13,7 @@ class OpenCvCamPublisher(Node):
 
         self.create_timer(0.04, self.timer_callback)
 
-        camSet='nvarguscamerasrc sensor_id=0 ! video/x-raw(memory:NVMM),width=1280, height=720, framerate=21/1, format=NV12 ! nvvidconv flip-method=0 ! video/x-raw,width=960, height=616, format=BGRx ! videoconvert ! appsink'
+        camSet='nvarguscamerasrc sensor_id=0 ! video/x-raw(memory:NVMM),width=224, height=224, framerate=21/1, format=NV12 ! nvvidconv flip-method=0 ! video/x-raw,width=224, height=224, format=BGRx ! videoconvert ! appsink'
         self.video = cv2.VideoCapture(camSet)
 
         
