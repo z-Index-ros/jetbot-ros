@@ -33,7 +33,8 @@ def save_blocked():
     blocked_count = len(os.listdir(blocked_dir))
 
 # prepare the camera set
-camSet='nvarguscamerasrc sensor_id=0 ! video/x-raw(memory:NVMM),width=1280, height=720, framerate=21/1, format=NV12 ! nvvidconv flip-method=0 ! video/x-raw,width=960, height=616, format=BGRx ! videoconvert ! appsink'
+#camSet='nvarguscamerasrc sensor_id=0 ! video/x-raw(memory:NVMM),width=1280, height=720, framerate=21/1, format=NV12 ! nvvidconv flip-method=0 ! video/x-raw,width=960, height=616, format=BGRx ! videoconvert ! appsink'
+camSet=0
 
 # start the camera capture
 video = cv2.VideoCapture(camSet)
