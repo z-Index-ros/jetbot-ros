@@ -1,7 +1,19 @@
+## Prerequisites
 
-## Install Pytorch
+### Install Jupyter Notebook
+
+```bash
+# install
+sudo pip install jupyterlab
+
+# run
+jupyter-lab
+```
+
+### Install Pytorch
 https://pytorch.org/get-started/locally/
 
 ```bash
-sudo pip3 install torch torchvision torchaudio
+sudo pip install torch torchvision torchaudio
 ```
+
