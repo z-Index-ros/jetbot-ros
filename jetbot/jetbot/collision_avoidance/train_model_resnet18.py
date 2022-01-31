@@ -9,12 +9,14 @@ import os
 from datetime import datetime
 
 
-print("Starting at ", datetime.now)
+print("Starting at ", datetime.now())
 print("Start working in ", os.getcwd())
+datasetPath = "jetbot/jetbot/collision_avoidance/dataset"
+print("Using dataset located at ", datasetPath)
 
 print("Create dataset instance")
 dataset = datasets.ImageFolder(
-    'dataset',
+    datasetPath,
     transforms.Compose([
         transforms.ColorJitter(0.1, 0.1, 0.1, 0.1),
         transforms.Resize((224, 224)),
@@ -43,6 +45,7 @@ test_loader = torch.utils.data.DataLoader(
 
 
 print("Define the neural network")
+print("CUDA available ", torch.cuda.is_available())
 model = models.resnet18(pretrained=True)
 model.fc = torch.nn.Linear(512, 2)
 device = torch.device('cuda' if torch.cuda.is_available() else "cpu")
@@ -50,7 +53,7 @@ model = model.to(device)
 
 print("Train the neural network")
 NUM_EPOCHS = 30
-BEST_MODEL_PATH = 'best_model_resnet18.pth'
+BEST_MODEL_PATH = datasetPath + '\best_model_resnet18.pth'
 best_accuracy = 0.0
 
 optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
@@ -74,7 +77,7 @@ for epoch in range(NUM_EPOCHS):
         test_error_count += float(torch.sum(torch.abs(labels - outputs.argmax(1))))
     
     test_accuracy = 1.0 - float(test_error_count) / float(len(test_dataset))
-    print('%d: %f' % (epoch, test_accuracy))
+    print('%d: %f - %s' % (epoch, test_accuracy, datetime.now()))
     if test_accuracy > best_accuracy:
         torch.save(model.state_dict(), BEST_MODEL_PATH)
         best_accuracy = test_accuracy
@@ -82,4 +85,4 @@ for epoch in range(NUM_EPOCHS):
 print("----------------------")
 print("train finished")
 print(BEST_MODEL_PATH)
-print(datetime.now)
+print(datetime.now())
