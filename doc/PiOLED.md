@@ -19,6 +19,9 @@ sudo pip3 install adafruit-blinka
 
 # PiOLED (with SSD1306 chipset)
 sudo pip3 install adafruit-circuitpython-ssd1306
+
+# PIL
+sudo pip3 install pillow
 ```
 
 > BTW, the Adfruit libraries used in the JetBot ROS project proposed by NVidia are deprecated
